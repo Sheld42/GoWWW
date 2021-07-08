@@ -1,4 +1,4 @@
-FROM golang:1.16
+FROM golang:1.16.5-alpine
 
 WORKDIR /app
 
@@ -7,8 +7,8 @@ RUN go mod download
 
 COPY *.go .
 
-go build -o /GoWWW
+RUN go build -o /GoWWW
 
-EXPOSE 8080
+EXPOSE 81
 
 CMD [ "/GoWWW" ]
